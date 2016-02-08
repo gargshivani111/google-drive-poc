@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:description="Configuration settings for Google Drive Connect access"
+    jcr:primaryType="cq:Template"
+    jcr:title="Google Drive"
+    allowedPaths="[/etc/cloudservices/googledriveconnect(/.*)?]"
+    ranking="{Long}100">
+    <jcr:content
+        jcr:primaryType="cq:PageContent"
+        sling:resourceType="social/connect/components/google-drive-connect"/>
+</jcr:root>

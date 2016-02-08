@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/apps/googleDrive"/>
+    <filter root="/apps/social/connect/components/google-drive-connect"/>
+    <filter root="/apps/social/connect/templates/google-drive"/>
+    <filter root="/etc/cloudservices/googledriveconnect"/>
+</workspaceFilter>

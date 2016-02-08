@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?><components xmlns:scr="http://www.osgi.org/xmlns/scr/v1.0.0">
+    <scr:component enabled="true" name="com.practice.googleDrive.impl.HelloServiceImpl">
+        <implementation class="com.practice.googleDrive.impl.HelloServiceImpl"/>
+        <service servicefactory="false">
+            <provide interface="com.practice.googleDrive.HelloService"/>
+        </service>
+        <property name="service.pid" value="com.practice.googleDrive.impl.HelloServiceImpl"/>
+        <reference name="repository" interface="org.apache.sling.jcr.api.SlingRepository" cardinality="1..1" policy="static" bind="bindRepository" unbind="unbindRepository"/>
+    </scr:component>
+    <scr:component enabled="true" immediate="true" name="com.practice.googleDrive.impl.filters.LoggingFilter">
+        <implementation class="com.practice.googleDrive.impl.filters.LoggingFilter"/>
+        <service servicefactory="false">
+            <provide interface="javax.servlet.Filter"/>
+        </service>
+        <property name="service.ranking" type="Integer" value="-700"/>
+        <property name="sling.filter.scope" value="REQUEST"/>
+        <property name="service.pid" value="com.practice.googleDrive.impl.filters.LoggingFilter"/>
+    </scr:component>
+    <scr:component enabled="true" immediate="true" name="com.practice.googleDrive.impl.GoogleDriveAccessToken">
+        <implementation class="com.practice.googleDrive.impl.GoogleDriveAccessToken"/>
+        <service servicefactory="false">
+            <provide interface="javax.servlet.Servlet"/>
+            <provide interface="javax.servlet.ServletConfig"/>
+            <provide interface="java.io.Serializable"/>
+        </service>
+        <property name="sling.servlet.methods" type="String" value="POST"/>
+        <property name="sling.servlet.paths" type="String" value="/bin/googleDriveToken"/>
+        <property name="service.pid" value="com.practice.googleDrive.impl.GoogleDriveAccessToken"/>
+    </scr:component>
+</components>

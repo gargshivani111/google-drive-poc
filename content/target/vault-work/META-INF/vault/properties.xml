@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>googleDrive Package</comment>
+<entry key="createdBy">shivani</entry>
+<entry key="name">googleDrive-content</entry>
+<entry key="created">2016-02-08T09:47:11.486+0530</entry>
+<entry key="groupId">group-id-googleDrive</entry>
+<entry key="version">1.0-SNAPSHOT</entry>
+<entry key="requiresRoot">false</entry>
+<entry key="group">googleDrive</entry>
+<entry key="description">Maven Multimodule project for googleDrive.</entry>
+<entry key="artifactId">googleDrive-content</entry>
+<entry key="path">/etc/packages/googleDrive/googleDrive-content.zip</entry>
+</properties>

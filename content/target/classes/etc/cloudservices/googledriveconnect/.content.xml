@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:rep="internal"
+    jcr:mixinTypes="[rep:AccessControllable]"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2011-10-17T15:30:19.911+02:00"
+        cq:lastModifiedBy="admin"
+        cq:template="social/connect/templates/google-drive"
+        jcr:description="GoogleDrive Connect Configurations"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="GoogleDrive Connect"
+        sling:resourceType="cq/cloudserviceconfigs/components/servicepage"
+        connectedWhen="appid"
+        description="GoogleDrive Connect Registration"
+        descriptionExtended="Google Drive  Connect Registration"
+        ranking="70"
+        serviceAdminUrl=""
+        showOnDashboard="false"
+        thumbnailPath="/etc/cloudservices/googledriveconnect/images.jpg"
+        visible="{Boolean}true"/>
+    <images.jpg/>
+    <GoogleDriveDemo/>
+</jcr:root>
