@@ -47,7 +47,7 @@ public class GoogleDriveAccessToken extends SlingAllMethodsServlet {
 
 
         try {
-             JSONObject jsonObject=new JSONObject();
+             JSONObject jsonObject;
             GetImagesData getImagesData=new GetImagesData();
             jsonObject=getImagesData.ImagesJson(str);
             response.getWriter().write(jsonObject.toString());

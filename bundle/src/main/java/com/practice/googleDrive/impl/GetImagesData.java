@@ -2,6 +2,7 @@ package com.practice.googleDrive.impl;
 
 
 
+import org.apache.sling.commons.json.JSONArray;
 import org.apache.sling.commons.json.JSONException;
 import org.apache.sling.commons.json.JSONObject;
 import javax.net.ssl.HttpsURLConnection;
@@ -19,10 +20,10 @@ public class GetImagesData {
     public JSONObject ImagesJson(String accessToken) throws IOException,JSONException {
 
         System.out.print("i m inside imageJson");
-        String url = "https://content.googleapis.com/drive/v2/files/0B2NqFQc4CTl6Tk1PMTlaaEZFYkk/children?key=AIzaSyC_WHu3zJbeY0iyHQJj-JhMmCJ8mmRycy4";
-        String str = getHttpResponse(url, accessToken);
-        JSONObject jsonObject = new JSONObject(str);
-        return jsonObject;
+        String url = "https://content.googleapis.com/drive/v2/files/0B2NqFQc4CTl6Tk1PMTlaaEZFYkk/children?key=AIzaSyA7CRgJ64rm5_o7u5WIYeMzimXyaFatwUQ";
+        String str = getHttpResponse(url, getAccessToken(accessToken));
+        JSONObject jsonObject1=new JSONObject(str);
+        return jsonObject1;
     }
 
     public static String getHttpResponse(String url, String accessToken) throws IOException {
@@ -64,6 +65,13 @@ public class GetImagesData {
         }
         return null;
     }
+
+           private String getAccessToken(String accessTokenStr) throws JSONException{
+                JSONObject obj = new JSONObject(accessTokenStr);
+               return obj.get("access_token").toString() ;
+
+           }
+
                     }
 
 
