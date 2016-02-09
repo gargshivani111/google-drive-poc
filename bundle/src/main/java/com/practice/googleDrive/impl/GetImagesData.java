@@ -18,12 +18,29 @@ import java.io.IOException;
 
 public class GetImagesData {
     public JSONObject ImagesJson(String accessToken) throws IOException,JSONException {
-
-        System.out.print("i m inside imageJson");
+        JSONObject jsonObject;//=new JSONObject();
+         accessToken=getAccessToken(accessToken);
         String url = "https://content.googleapis.com/drive/v2/files/0B2NqFQc4CTl6Tk1PMTlaaEZFYkk/children?key=AIzaSyA7CRgJ64rm5_o7u5WIYeMzimXyaFatwUQ";
-        String str = getHttpResponse(url, getAccessToken(accessToken));
-        JSONObject jsonObject1=new JSONObject(str);
-        return jsonObject1;
+        String str = getHttpResponse(url, accessToken);
+        System.out.print(str);
+        jsonObject = new JSONObject(str);
+
+        JSONArray jsonArray = new JSONArray();
+        jsonArray = (JSONArray)jsonObject.get("items");
+
+            try {
+                for (int i = 0; i < jsonArray.length(); i++) {
+                    JSONObject item = jsonArray.getJSONObject(i);
+                    String selfLink = item.getString("childLink");
+                    String val = getHttpResponse(selfLink, accessToken);
+                    jsonArray.getJSONObject(i).put("self", new JSONObject(val));
+                }
+            } catch (Exception e)
+            {
+              System.out.print("exception");
+            }
+
+        return jsonObject;
     }
 
     public static String getHttpResponse(String url, String accessToken) throws IOException {
